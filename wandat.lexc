@@ -1,0 +1,31 @@
+!!!wandat.lexc!!!
+
+Multichar_Symbols +1P +2P +MASC +FEMZ +FEMI +In +Ex +Sg +Dl +Pl +FACT +FUT +OPT @P.MODAL.ON@ @D.MODAL@ @C.MODAL@ +PUNC +HAB +STAT +IMP
+
+LEXICON Root
+
+CStemVerb ;
+
+LEXICON CStemVerb
+
+@P.MODAL.ON@+FACT:@P.MODAL.ON@aʔ^ CStemPronPref;
+CStemPronPref ;
+
+LEXICON CStemPronPref
+
++1P+Sg:ye^ CStemVerbRoot ;
++2P+Sg:hše^ CStemVerbRoot ;
++MASC+Sg:ha^ CStemVerbRoot ;
++FEMZ+Sg:ya^ CStemVerbRoot ;
++FEMI+Sg:e^ CStemVerbRoot ;
+
+LEXICON CStemVerbRoot
+
+ⁿgyaha Aspect;
+
+LEXICON Aspect
+
+@C.MODAL@+PUNC:@C.MODAL@^ʔ #;
+@D.MODAL@+HAB:@D.MODAL@^š #;
+@D.MODAL@+STAT:@D.MODAL@^y #;
+@D.MODAL@+IMP:@D.MODAL@^0 #;
