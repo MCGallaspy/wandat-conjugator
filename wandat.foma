@@ -1,14 +1,18 @@
 ### wandat.foma ###
 
-# Multichar_Symbols ą ǫ ę oV nV ;
-
 # Vowels
 define oV [ a | e | i | u ];
-define nV [ ą | ę | ǫ ];
+define nV [ a ̨ | e ̨ | o ̨ ];
+define consonant [ t | k | ʔ | ⁿ d | ⁿ g | s | š | h | ž | m | n | r | w | y ];
 
 define InitialHDeletion h -> 0 || .#. _ [ s | š ] ;
 
 define GlottalStopElision ʔ -> 0 || _ "^" h ;
+
+define SemiMeetsW t -> k || _ "^" w ;
+define SemiMeetsConsonant t -> t e || _ "^" consonant ;
+
+define AStemOverlap a -> 0 || [ u | o ̨ ] "^" _ ;
 
 # Cleanup: remove morpheme boundaries
 define Cleanup "^" -> 0;
@@ -16,9 +20,12 @@ define Cleanup "^" -> 0;
 read lexc wandat.lexc
 define Lexicon;
 
-define Grammar Lexicon          .o.
+define Grammar Lexicon .o.
                InitialHDeletion .o.
 			   GlottalStopElision .o.
+			   SemiMeetsW .o.
+			   SemiMeetsConsonant .o.
+			   AStemOverlap .o.
                Cleanup;
 
 regex Grammar;

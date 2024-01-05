@@ -1,35 +1,42 @@
 !!!wandat.lexc!!!
 
-Multichar_Symbols +1P +2P +MASC +FEMZ +FEMI +In +Ex +Sg +Dl +Pl +FACT +FUT +OPT @P.MODAL.ON@ @D.MODAL@ @R.MODAL@ +PUNC +HAB +STAT +AGT +PAT
+Multichar_Symbols +1P +2P +MASC +FEMZ +FEMI +In +Ex +Sg +Dl +Pl +FACT +FUT +OPT @P.MODAL.ON@ @D.MODAL@ @R.MODAL@ +PUNC +HAB +STAT +AGT +PAT +SEMI
 
 
 LEXICON Root
 
-CStemVerb ;
+PronPrefStart ;
+ModalStart ;
 
 
-LEXICON CStemVerb
+LEXICON PronPrefStart
+
+CStemPronPref ;
+AStemPronPref ;
+
+
+LEXICON ModalStart
 
 @P.MODAL.ON@+FACT:@P.MODAL.ON@aʔ^ CStemPronPref;
-CStemPronPref ;
+@P.MODAL.ON@+FACT:@P.MODAL.ON@aʔ^ AStemPronPref;
 
 
 LEXICON CStemPronPref
 
-+1P+Sg+AGT:ye^ CStemAgentVerb ;
-+2P+Sg+AGT:hše^ CStemAgentVerb ;
-+MASC+Sg+AGT:ha^ CStemAgentVerb ;
-+FEMZ+Sg+AGT:ya^ CStemAgentVerb ;
-+FEMI+Sg+AGT:e^ CStemAgentVerb ;
++1P+Sg+AGT:ye^ CStemAgentVerbStem ;
++2P+Sg+AGT:hše^ CStemAgentVerbStem ;
++MASC+Sg+AGT:ha^ CStemAgentVerbStem ;
++FEMZ+Sg+AGT:ya^ CStemAgentVerbStem ;
++FEMI+Sg+AGT:e^ CStemAgentVerbStem ;
 
-+1P+Sg+PAT:waye^ CStemPatientVerb ;
-+2P+Sg+PAT:sa^ CStemPatientVerb ;
-+MASC+Sg+PAT:hu^ CStemPatientVerb ;
-+FEMZ+Sg+PAT:u^ CStemPatientVerb ;
-+FEMI+Sg+PAT:ayu^ CStemPatientVerb ;
++1P+Sg+PAT:waye^ CStemPatientVerbStem ;
++2P+Sg+PAT:sa^ CStemPatientVerbStem ;
++MASC+Sg+PAT:hu^ CStemPatientVerbStem ;
++FEMZ+Sg+PAT:u^ CStemPatientVerbStem ;
++FEMI+Sg+PAT:ayu^ CStemPatientVerbStem ;
 
 
-LEXICON CStemAgentVerb
+LEXICON CStemAgentVerbStem
 
 @R.MODAL@ⁿgyaha+PUNC:@R.MODAL@ⁿgyahaʔ #;
 @D.MODAL@ⁿgyaha+HAB:@D.MODAL@ⁿgyahaš #;
@@ -37,8 +44,36 @@ LEXICON CStemAgentVerb
 @R.MODAL@ⁿdraw+PUNC:@R.MODAL@ⁿdrawaʔ #;
 @D.MODAL@ⁿdraw+HAB:@D.MODAL@ⁿdrawahs #;
 
+@R.MODAL@wahst+PUNC:@R.MODAL@wahstaʔ #;
+@D.MODAL@wahst+STAT:@D.MODAL@wahstih #;
 
-LEXICON CStemPatientVerb
+
+LEXICON CStemPatientVerbStem
 
 @D.MODAL@ⁿgyaha+STAT:@D.MODAL@ⁿgyahay #;
 @D.MODAL@ⁿdraw+STAT:@D.MODAL@ⁿdramęh #;
+
+
+LEXICON AStemPronPref
+
++1P+Sg+AGT:y^ AStemAgentStem ;
++2P+Sg+AGT:hš^ AStemAgentStem ;
++MASC+Sg+AGT:h^ AStemAgentStem ;
++FEMZ+Sg+AGT:w^ AStemAgentStem ;
++FEMI+Sg+AGT:ǫ^ AStemAgentStem ;
+
++1P+Sg+AGT:way^ AStemPatientStem ;
++2P+Sg+AGT:s^ AStemPatientStem ;
++MASC+Sg+AGT:hu^ AStemPatientStem ;
++FEMZ+Sg+AGT:ayu^ AStemPatientStem ;
++FEMI+Sg+AGT:u^ AStemPatientStem ;
+
+
+LEXICON AStemAgentStem
+
++SEMI:at^ CStemAgentVerbStem ;
+
+
+LEXICON AStemPatientStem
+
++SEMI:at^ CStemPatientVerbStem ;
