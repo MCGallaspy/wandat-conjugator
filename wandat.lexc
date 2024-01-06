@@ -72,8 +72,9 @@ LEXICON AStemPronPref
 LEXICON AStemAgentStem
 
 +SEMI:at^ CStemAgentVerbStem ;
-
+@R.MODAL@atǫmęht+PUNC:@R.MODAL@atǫmęht #;
 
 LEXICON AStemPatientStem
 
 +SEMI:at^ CStemPatientVerbStem ;
+@D.MODAL@atǫmęht+STAT:@D.MODAL@atǫmęhtih #;
