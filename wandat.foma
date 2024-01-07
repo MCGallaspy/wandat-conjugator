@@ -6,6 +6,7 @@ define nV [ a ̨ | e ̨ | o ̨ ];
 define consonant [ t | k | ʔ | ⁿ d | ⁿ g | s | š | h | ž | m | n | r | w | y ];
 
 define InitialHDeletion h -> 0 || .#. _ [ s | š ] ;
+define InitialWDeletion w -> 0 || .#. _ a y ;
 
 define GlottalStopElision ʔ -> 0 || _ "^" h ;
 
@@ -22,6 +23,7 @@ define Lexicon;
 
 define Grammar Lexicon .o.
                InitialHDeletion .o.
+			   InitialWDeletion .o.
 			   GlottalStopElision .o.
 			   SemiMeetsW .o.
 			   SemiMeetsConsonant .o.
